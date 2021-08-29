@@ -5,7 +5,7 @@ KERNELVERSION = "4.4.35"
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
-require conf/machine/include/tune-cortexa15.inc
+require conf/machine/include/arm/armv7a/tune-cortexa15.inc
 
 require conf/machine/include/soc-family.inc
 
@@ -29,7 +29,7 @@ BOX_BRAND = "atto"
 
 DISPLAY_BRAND = "Atto.TV"
 
-EXTRA_OECONF_append_pn-enigma2 = "--with-lcddev=/dev/null --with-alphablendingacceleration=always"
+EXTRA_OECONF:append_pn-enigma2 = "--with-lcddev=/dev/null --with-alphablendingacceleration=always"
 
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-spark --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
 
@@ -45,7 +45,7 @@ IMAGE_ROOTFS_SIZE ?= "589824"
 
 MACHINE_FEATURES += "emmc mmc"
 
-IMAGE_CMD_attoemmc_append = " \
+IMAGE_CMD:attoemmc:append = " \
 	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
 	if [ "${SDCARDIMG}" = "yes" ]; then \
 		mv -f ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.emmc.img ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${IMAGE_NAME}.sdcard.img; \
@@ -66,7 +66,7 @@ IMAGE_CMD_attoemmc_append = " \
 	rm -Rf ${IMAGEDIR}; \
 	"
 
-IMAGE_CMD_prepend = "\
+IMAGE_CMD:prepend = "\
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	"
 
