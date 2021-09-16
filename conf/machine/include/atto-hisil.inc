@@ -29,7 +29,7 @@ BOX_BRAND = "atto"
 
 DISPLAY_BRAND = "Atto.TV"
 
-EXTRA_OECONF:append_pn-enigma2 = "--with-lcddev=/dev/null --with-alphablendingacceleration=always"
+EXTRA_OECONF:append:pn-enigma2 = "--with-lcddev=/dev/null --with-alphablendingacceleration=always"
 
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-spark --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
 
