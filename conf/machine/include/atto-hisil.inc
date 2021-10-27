@@ -71,3 +71,5 @@ IMAGE_CMD:prepend = "\
 	"
 
 IMAGEDIR = "atto/${MACHINE}"
+
+CFLAGS:append:pn-titan = " -DCONFIG_HISILICON_FB "
