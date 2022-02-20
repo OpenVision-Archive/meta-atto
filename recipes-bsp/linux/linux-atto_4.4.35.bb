@@ -24,7 +24,7 @@ RPROVIDES:${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_
 
 SRC_URI = "https://github.com/OpenVisionE2/hisilicon-kernel/archive/atto-linux.tar.gz \
 	file://defconfig \
-	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	${GCCKERPATCH} \
 	file://wifi-linux_4.4.183.patch \
 	file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
 	file://0003-uaccess-dont-mark-register-as-const.patch \
